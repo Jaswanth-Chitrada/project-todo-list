@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    .todo{
+        background-color: rgb(170, 231, 239);
+        height: 80vh;
+        width: 70vw;
+        position: relative;
+        left: 180px;
+
+        top:50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    #todoinput{
+        height: 30px;
+        width: 500px;
+    }
+
+    li{
+        background-color: rgb(183, 255, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        
+        height: 30px;
+        width: 500px;
+        margin-bottom: 8px;
+        
+
+        
+    }
+
+
+
+</style>
+
+
+
+<body>
+    <div class="todo">
+        <h1>Todo list</h1>
+        <p style="font-family:Cambria, Cochin; font-weight: bold;"> Add a work</p>
+        <input type="text" id="todoinput">
+        <button id ="btn" style=" height: 20px; width:50px; background-color: blue; color: aliceblue; margin-top: 20px; border: none;">Add</button>
+        
+        <h2>Tasks to complete :- </h2>
+
+        <ol class="box" id="box">
+            
+            
+        </ol>
+
+
+
+
+
+
+
+    </div>
+    
+</body>
+
+
+<script>
+    let input = document.querySelector("#todoinput");
+    let btn=document.querySelector("#btn");
+    let par = document.querySelector(".box");
+
+    btn.addEventListener("click",()=>{
+        let node = document.createElement("li");
+        node.setAttribute("class","hi")
+        
+        node.innerHTML="-> " + input.value;
+        par.appendChild(node);
+
+        node.addEventListener("click",()=>{
+        par.removeChild(node);
+
+    });     
+
+
+
+        
+    });
+
+    
+
+    
+
+    
+
+
+
+</script>
+</html>
